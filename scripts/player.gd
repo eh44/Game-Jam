@@ -50,9 +50,9 @@ func _physics_process(delta: float) -> void:
 			position.y += SPEED * delta
 	move_and_slide()
 
-func _on_mask_collect() -> void:
+func _on_mask_collect(currentFlag: int) -> void:
 	flag += 1
-	currentShape += 1
+	currentShape = currentFlag + 1
 	shift()
 
 func shift():
@@ -96,3 +96,16 @@ func shift():
 	$AnimatedSprite2D.scale = sca
 	$CollisionShape2D.shape.radius = rad
 	$CollisionShape2D.shape.height = hei
+
+
+func _on_force_shift(area: String) -> void:
+	match area:
+		"air":
+			if flag < 3:
+				currentShape = 0
+			else:
+				currentShape = 3
+			shift()
+		"water":
+			currentShape = 2
+			shift()

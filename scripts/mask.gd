@@ -20,7 +20,7 @@ func _process(_delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		collect.emit()
+		collect.emit(flag)
 		match flag:
 			0:
 				position = Vector2(500, 680)
