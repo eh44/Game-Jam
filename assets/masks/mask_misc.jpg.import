@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4bht5uaa4r38"
-path="res://.godot/imported/trees.png-1cd5418761009d6c108a7fa195929796.ctex"
+uid="uid://dphutn7gqaf3n"
+path="res://.godot/imported/mask_misc.jpg-4aa3e569c6185e336c8991adb2be5d12.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background/trees.png"
-dest_files=["res://.godot/imported/trees.png-1cd5418761009d6c108a7fa195929796.ctex"]
+source_file="res://assets/masks/mask_misc.jpg"
+dest_files=["res://.godot/imported/mask_misc.jpg-4aa3e569c6185e336c8991adb2be5d12.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://er1p7fsfriqs"
-path="res://.godot/imported/bear_2.png-f2b6eea5950952cc498608a617b2393e.ctex"
+uid="uid://bei2dgyxkve6u"
+path="res://.godot/imported/tiles.png-ccd15aa377206c965e54a33009120212.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bear_2.png"
-dest_files=["res://.godot/imported/bear_2.png-f2b6eea5950952cc498608a617b2393e.ctex"]
+source_file="res://assets/scenery/tiles.png"
+dest_files=["res://.godot/imported/tiles.png-ccd15aa377206c965e54a33009120212.ctex"]
 
 [params]
 

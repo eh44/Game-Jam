@@ -1,3 +1,8 @@
 [gd_scene format=3 uid="uid://n5on6321w8dn"]
 
+[ext_resource type="TileSet" uid="uid://425w5hrhdokf" path="res://assets/new_tile_set.tres" id="1_5hauk"]
+
 [node name="Map" type="Node2D" unique_id=1197262305]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1283963147]
+tile_set = ExtResource("1_5hauk")

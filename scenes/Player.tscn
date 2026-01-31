@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://qxeglv4ti38c"]
 
-[ext_resource type="Texture2D" uid="uid://dx1d04vsedjqc" path="res://assets/Adobe Express - file.png" id="1_3li8b"]
-[ext_resource type="Texture2D" uid="uid://er1p7fsfriqs" path="res://assets/bear_2.png" id="2_mdl7e"]
-[ext_resource type="Texture2D" uid="uid://dwwkv7j6t3l5t" path="res://assets/original-8642dfa3711df1210bd30fab0b9eeec3.png" id="3_qu4a1"]
-[ext_resource type="Texture2D" uid="uid://bj2fw73elufu4" path="res://assets/29565-22bba7ac118d6be9a7f28e7912a552e8.png" id="4_mdl7e"]
+[ext_resource type="Texture2D" uid="uid://dx1d04vsedjqc" path="res://assets/player/fish.png" id="1_3li8b"]
+[ext_resource type="Texture2D" uid="uid://er1p7fsfriqs" path="res://assets/player/bear.png" id="2_mdl7e"]
+[ext_resource type="Texture2D" uid="uid://dwwkv7j6t3l5t" path="res://assets/player/eagle.png" id="3_qu4a1"]
+[ext_resource type="Texture2D" uid="uid://bj2fw73elufu4" path="res://assets/player/man.png" id="4_mdl7e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_70d11"]
 atlas = ExtResource("1_3li8b")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ubgqsuth17dl"
-path="res://.godot/imported/mountains.png-548d56645f60520d3237ad9b8b164143.ctex"
+uid="uid://62jhgiwmmesj"
+path="res://.godot/imported/mask_fish.jpg-3d2856b814a465ad7eff560a4fb39370.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background/mountains.png"
-dest_files=["res://.godot/imported/mountains.png-548d56645f60520d3237ad9b8b164143.ctex"]
+source_file="res://assets/masks/mask_fish.jpg"
+dest_files=["res://.godot/imported/mask_fish.jpg-3d2856b814a465ad7eff560a4fb39370.ctex"]
 
 [params]
 

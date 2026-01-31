@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnvgwm8juds3y"
-path="res://.godot/imported/clouds.png-60323ed4fd66a65b9bc5ab661e1906ea.ctex"
+uid="uid://dx1d04vsedjqc"
+path="res://.godot/imported/fish.png-a4a146cd309c1b47b1286bb4a3cc8194.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background/clouds.png"
-dest_files=["res://.godot/imported/clouds.png-60323ed4fd66a65b9bc5ab661e1906ea.ctex"]
+source_file="res://assets/player/fish.png"
+dest_files=["res://.godot/imported/fish.png-a4a146cd309c1b47b1286bb4a3cc8194.ctex"]
 
 [params]
 
