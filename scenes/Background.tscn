@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bkgdv4ydvhvrm"]
+
+[ext_resource type="Script" uid="uid://b7xor37yjp73" path="res://scripts/background.gd" id="1_stukw"]
+[ext_resource type="Texture2D" uid="uid://yt6cr0lxov4k" path="res://assets/background/sky_2.png" id="1_txrn8"]
+[ext_resource type="Texture2D" uid="uid://ubgqsuth17dl" path="res://assets/background/mountains.png" id="2_stukw"]
+[ext_resource type="Texture2D" uid="uid://c4bht5uaa4r38" path="res://assets/background/trees.png" id="3_4ib1v"]
+[ext_resource type="Texture2D" uid="uid://dwooffiju4885" path="res://assets/background/grass.png" id="4_2ttnm"]
+[ext_resource type="Texture2D" uid="uid://bnvgwm8juds3y" path="res://assets/background/clouds.png" id="5_4ret6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ib1v"]
+size = Vector2(1950, 20)
+
+[node name="Background" type="Node2D" unique_id=970330044]
+script = ExtResource("1_stukw")
+
+[node name="Sky2" type="Sprite2D" parent="." unique_id=1563091597]
+position = Vector2(960, 600)
+texture = ExtResource("1_txrn8")
+
+[node name="Clouds" type="Parallax2D" parent="." unique_id=512802923]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(5, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Clouds" unique_id=1130762921]
+position = Vector2(960, 600)
+texture = ExtResource("5_4ret6")
+
+[node name="Mountains" type="Parallax2D" parent="." unique_id=1005883536]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(10, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Mountains" unique_id=1592965619]
+position = Vector2(960, 600)
+texture = ExtResource("2_stukw")
+
+[node name="Trees" type="Parallax2D" parent="." unique_id=1440274367]
+repeat_size = Vector2(1495, 0)
+autoscroll = Vector2(15, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Trees" unique_id=1019445475]
+position = Vector2(960, 600)
+texture = ExtResource("3_4ib1v")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=732928379]
+
+[node name="Ground" type="Area2D" parent="Parallax2D" unique_id=1365879083]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Parallax2D/Ground" unique_id=51116861]
+position = Vector2(967, 957)
+shape = SubResource("RectangleShape2D_4ib1v")
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=374757007]
+position = Vector2(960, 600)
+texture = ExtResource("4_2ttnm")
