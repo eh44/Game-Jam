@@ -11,10 +11,12 @@ script = ExtResource("1_vcsgt")
 [node name="Map" parent="." unique_id=1197262305 instance=ExtResource("1_rvslj")]
 
 [node name="Player" parent="." unique_id=316984297 instance=ExtResource("2_0bbpv")]
-position = Vector2(588, 379)
+position = Vector2(593, 391)
+scale = Vector2(1, 1)
 
 [node name="Mask" parent="." unique_id=505974108 instance=ExtResource("3_0bbpv")]
 position = Vector2(500, 680)
 scale = Vector2(0.1, 0.1)
 
+[connection signal="forceShift" from="Map" to="Player" method="_on_force_shift"]
 [connection signal="collect" from="Mask" to="Player" method="_on_mask_collect"]
