@@ -1,6 +1,7 @@
 extends Node2D
 
 signal forceShift
+signal GAME_OVER
 
 var flags: int = 0
 var wallScene = preload("res://scripts/tile_map_layer_3.gd")
@@ -29,3 +30,6 @@ func _on_mask_collect() -> void:
 	if flags >= 2:
 		var wall = wallScene.instantiate()
 		add_child(wall)
+
+func _on_goal_body_entered(body: Node2D) -> void:
+	GAME_OVER.emit(body)

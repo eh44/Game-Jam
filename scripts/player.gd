@@ -7,6 +7,7 @@ const SCALE_OFFSET: float = 0.5
 const shapes = ["Man", "Bear", "Fish", "Eagle"]
 
 var GAME_START: bool = false
+var GAME_OVER: bool = false
 var shape: String = "Man"
 var flag = 0
 var currentShape = 0
@@ -19,7 +20,7 @@ func _ready() -> void:
 	velocity.y = 0
 
 func _physics_process(delta: float) -> void:
-	if GAME_START:
+	if GAME_START == true:
 		if Input.is_action_just_pressed("shift_quick"):
 			if currentShape < flag:
 				currentShape += 1
@@ -51,6 +52,10 @@ func _physics_process(delta: float) -> void:
 			elif Input.is_action_pressed("move_down"):
 				position.y += SPEED * delta
 		move_and_slide()
+	elif GAME_OVER == true:
+		$Intro.text = "The sun rises for another beginning a cycle of new and old."
+		$Intro.show()
+		position.x -= SPEED * delta
 
 func _on_mask_collect(currentFlag: int) -> void:
 	match flag:
@@ -131,3 +136,8 @@ func _on_hud_start() -> void:
 func _on_gate_body_entered(body: Node) -> void:
 	if body.name == "Player" and body.get_node("AnimatedSprite2D").animation == "Bear":
 		queue_free()
+
+func _on_map_game_over(body) -> void:
+	if body.name == "Player":
+		GAME_START = false
+		GAME_OVER = true

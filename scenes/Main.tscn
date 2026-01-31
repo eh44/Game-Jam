@@ -23,6 +23,7 @@ scale = Vector2(0.1, 0.1)
 [node name="Gate" parent="." unique_id=296339058 instance=ExtResource("5_vcsgt")]
 position = Vector2(435, 440)
 
+[connection signal="GAME_OVER" from="Map" to="Player" method="_on_map_game_over"]
 [connection signal="forceShift" from="Map" to="Player" method="_on_force_shift"]
 [connection signal="collect" from="Mask" to="Map" method="_on_mask_collect"]
 [connection signal="collect" from="Mask" to="Player" method="_on_mask_collect"]
