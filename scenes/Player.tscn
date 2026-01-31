@@ -162,3 +162,27 @@ shape = SubResource("CapsuleShape2D_mdl7e")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1232924965]
 position = Vector2(-5.9604645e-08, 0)
 zoom = Vector2(1.5, 1.5)
+
+[node name="Intro" type="Label" parent="." unique_id=1455290779]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -168.5
+offset_top = -100.0
+offset_right = 168.5
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "You are not lost.
+You are only beginning your journey."
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Timer" type="Timer" parent="." unique_id=820262715]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

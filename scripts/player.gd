@@ -12,6 +12,8 @@ var flag = 0
 var currentShape = 0
 
 func _ready() -> void:
+	$AnimatedSprite2D.hide()
+	$Intro.hide()
 	shift()
 	scale = Vector2(0.7, 0.7)
 	velocity.y = 0
@@ -49,6 +51,10 @@ func _physics_process(delta: float) -> void:
 		elif Input.is_action_pressed("move_down"):
 			position.y += SPEED * delta
 	move_and_slide()
+
+func start():
+	position = Vector2(600.0, 400.0)
+	show()
 
 func _on_mask_collect(currentFlag: int) -> void:
 	flag += 1
@@ -97,7 +103,6 @@ func shift():
 	$CollisionShape2D.shape.radius = rad
 	$CollisionShape2D.shape.height = hei
 
-
 func _on_force_shift(area: String) -> void:
 	match area:
 		"air":
@@ -109,3 +114,6 @@ func _on_force_shift(area: String) -> void:
 		"water":
 			currentShape = 2
 			shift()
+
+func _on_timer_timeout() -> void:
+	$Intro.show()

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ccthk2wtkxb3t"
+path="res://.godot/imported/ggj p b.wav-3e8b41dce4c33aa4b76195bb6e4c00de.sample"
+
+[deps]
+
+source_file="res://assets/music/ggj p b.wav"
+dest_files=["res://.godot/imported/ggj p b.wav-3e8b41dce4c33aa4b76195bb6e4c00de.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
