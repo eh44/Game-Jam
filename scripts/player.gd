@@ -12,8 +12,10 @@ var flag = 0
 var currentShape = 0
 
 func _ready() -> void:
-	scale
+	shift()
+	scale = Vector2(0.7, 0.7)
 	velocity.y = 0
+	
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("shift_quick"):
@@ -35,14 +37,25 @@ func _physics_process(delta: float) -> void:
 			position.x += SPEED * delta
 		velocity.y += GRAVITY * delta
 		position.y += velocity.y * delta
+	else:
+		if Input.is_action_pressed("move_left"):
+			$AnimatedSprite2D.flip_h = false
+			position.x -= SPEED * delta
+		elif Input.is_action_pressed("move_right"):
+			$AnimatedSprite2D.flip_h = true
+			position.x += SPEED * delta
+		if Input.is_action_pressed("move_up"):
+			position.y -= SPEED * delta
+		elif Input.is_action_pressed("move_down"):
+			position.y += SPEED * delta
 	move_and_slide()
 
 func _on_mask_collect() -> void:
 	flag += 1
+	currentShape += 1
 	shift()
 
 func shift():
-	currentShape += 1
 	shape = shapes[currentShape]
 	$AnimatedSprite2D.play(shape)
 	
@@ -52,29 +65,29 @@ func shift():
 	var hei: float
 	var sca: Vector2
 	
-	match currentShape:
-		0:
+	match shape:
+		"Man":
 			pos = Vector2.ZERO
 			rot = 0.0
 			sca = Vector2(0.7, 0.7)
 			rad = 10.0
 			hei = 40.0
-		1:
+		"Bear":
 			pos = Vector2(0.0, 16.0)
 			rot = 90.0
 			sca = Vector2.ONE
 			rad = 14.0
 			hei = 54.0
-		2:
+		"Fish":
 			pos = Vector2.ZERO
 			rot = 90.0
 			sca = Vector2(0.1, 0.1)
 			rad = 10.0
 			hei = 40.0
-		3:
-			pos = Vector2(0.0, 2.0)
+		"Eagle":
+			pos = Vector2(0.0, 4.0)
 			rot = 90.0
-			sca = Vector2.ONE
+			sca = Vector2(0.2, 0.2)
 			rad = 2.0
 			hei = 6.0
 	

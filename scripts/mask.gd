@@ -6,6 +6,7 @@ var flag: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	show()
 	flag = 0
 	$Sprite2D.play("bear")
 	position = Vector2(80, 400)
@@ -28,4 +29,7 @@ func _on_body_entered(body: Node2D) -> void:
 			1:
 				position = Vector2(1060, 750)
 				$Sprite2D.play("eagle")
+			2:
+				hide()
+				$CollisionShape2D.set_deferred("disabled", true)
 		flag += 1
