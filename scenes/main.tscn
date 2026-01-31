@@ -1,3 +1,20 @@
 [gd_scene format=3 uid="uid://cy2k4uympnt40"]
 
+[ext_resource type="PackedScene" uid="uid://n5on6321w8dn" path="res://scenes/Map.tscn" id="1_rvslj"]
+[ext_resource type="Script" uid="uid://do6x6s6kugmpm" path="res://scripts/main.gd" id="1_vcsgt"]
+[ext_resource type="PackedScene" uid="uid://qxeglv4ti38c" path="res://scenes/Player.tscn" id="2_0bbpv"]
+[ext_resource type="PackedScene" uid="uid://2cx8l5rsixd2" path="res://scenes/Mask.tscn" id="3_0bbpv"]
+
 [node name="Main" type="Node2D" unique_id=242464519]
+script = ExtResource("1_vcsgt")
+
+[node name="Map" parent="." unique_id=1197262305 instance=ExtResource("1_rvslj")]
+
+[node name="Player" parent="." unique_id=316984297 instance=ExtResource("2_0bbpv")]
+position = Vector2(588, 379)
+
+[node name="Mask" parent="." unique_id=505974108 instance=ExtResource("3_0bbpv")]
+position = Vector2(90, 400)
+scale = Vector2(0.1, 0.1)
+
+[connection signal="collect" from="Mask" to="Player" method="_on_mask_collect"]
