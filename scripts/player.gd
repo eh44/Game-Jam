@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
 
-const SPEED = 200
-const GRAVITY = 1000.0
-const JUMPFORCE  = 150;
+const SPEED: int = 200
+const GRAVITY: float = 1000.0
+const JUMP_FORCE: int = 150;
+const SCALE_OFFSET: float = 0.5
 const shapes = ["Man", "Bear", "Fish", "Eagle"]
 
 var shape: String = "Man"
@@ -11,9 +12,9 @@ var flag = 0
 var currentShape = 0
 
 func _ready() -> void:
-	shift()
+	scale
 	velocity.y = 0
-	
+
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("shift_quick"):
 		if currentShape < flag:
@@ -22,14 +23,14 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.play(shapes[currentShape])
 		shift()
 	
-	if shape == "Man" or "Bear":
+	if shape == "Man" or shape == "Bear":
 		if Input.is_action_pressed("move_up"):
 			if is_on_floor():
-				velocity.y += -JUMPFORCE
-		elif  Input.is_action_pressed("move_left"):
+				velocity.y += -JUMP_FORCE
+		elif Input.is_action_pressed("move_left"):
 			$AnimatedSprite2D.flip_h = false
 			position.x -= SPEED * delta
-		elif  Input.is_action_pressed("move_right"):
+		elif Input.is_action_pressed("move_right"):
 			$AnimatedSprite2D.flip_h = true
 			position.x += SPEED * delta
 		velocity.y += GRAVITY * delta
@@ -37,14 +38,13 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _on_mask_collect() -> void:
-	match flag:
-		0:
-			$AnimatedSprite2D.play("Bear")
 	flag += 1
 	shift()
 
 func shift():
+	currentShape += 1
 	shape = shapes[currentShape]
+	$AnimatedSprite2D.play(shape)
 	
 	var pos: Vector2
 	var rot: float
@@ -56,7 +56,7 @@ func shift():
 		0:
 			pos = Vector2.ZERO
 			rot = 0.0
-			sca = Vector2.ONE
+			sca = Vector2(0.7, 0.7)
 			rad = 10.0
 			hei = 40.0
 		1:
@@ -80,6 +80,6 @@ func shift():
 	
 	$CollisionShape2D.position = pos
 	$CollisionShape2D.rotation = rot
-	$CollisionShape2D.scale = sca
+	$AnimatedSprite2D.scale = sca
 	$CollisionShape2D.shape.radius = rad
 	$CollisionShape2D.shape.height = hei

@@ -145,14 +145,17 @@ animations = [{
 height = 40.0
 
 [node name="Player" type="CharacterBody2D" unique_id=316984297]
+scale = Vector2(0.7, 0.7)
 script = ExtResource("1_qu4a1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=676956484]
 sprite_frames = SubResource("SpriteFrames_ebwui")
-animation = &"Man"
+animation = &"Fish"
 autoplay = "Man"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=726835601]
 shape = SubResource("CapsuleShape2D_mdl7e")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1232924965]
+position = Vector2(-1, 0)
+zoom = Vector2(1.5, 1.5)
